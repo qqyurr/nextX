@@ -1,12 +1,14 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
+import styles from "@/app/(beforeLogin)/_component/main.module.css";
 
-type Props = { children: ReactNode, modal: ReactNode };
-export default function Layout({ children }: Props) {
+type Props = { children: ReactNode; modal: ReactNode };
+export default function Layout({ children, modal }: Props) {
   return (
-    <div>
+    <div className={styles.container}>
       {children}
+      {modal}
     </div>
-  )
+  );
 }
 
 // 주소가 localhost:3001일 때는 children->page.tsx, modal->@modal/default.tsx
